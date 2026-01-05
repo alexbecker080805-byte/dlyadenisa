@@ -1,17 +1,19 @@
 import tkinter as tk
 import pygame
+import os
 
 # Initialize pygame mixer
 pygame.mixer.init()
 
 # Load the sound file
-sound = pygame.mixer.Sound('skrimer-golden-freddi-fnaf-1.mp3')
+sound_path = os.path.join(os.getcwd(), 'static', 'skrimer-golden-freddi-fnaf-1.mp3')
+pygame.mixer.music.load(sound_path)
 
 # Set volume to 500% (5.0)
-sound.set_volume(5.0)
+pygame.mixer.music.set_volume(5.0)
 
 def play_sound():
-    sound.play()
+    pygame.mixer.music.play()
 
 # Create the main window
 root = tk.Tk()
